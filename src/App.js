@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Functions from './components/functions/Functions'
 import About from './components/about/About'
 import Credits from './components/Credits'
 import Footer from './components/Footer'
@@ -10,7 +11,7 @@ const App = () => {
     <div>
       <Header />
       <Hero />
-      <div style={{height: '2000px'}}></div>
+      <Functions />
       <About />
       <Credits />
       <Footer />

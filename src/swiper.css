@@ -1,7 +1,25 @@
 .swiper-pagination {
-  margin-top: 20rem;
+  padding-top: 10rem;
 }
 
 .swiper-pagination-bullet {
-  background-color: #ac6b34;
+  background-color: #3d5af1;
+}
+
+.swiper-controller {
+  margin-top: 96px;
+}
+
+.swiper-slide h2 {
+  color: white;
+}
+
+.swiper-slide-active h2 {
+  color: black;
+  transition: 300ms;
+}
+
+.swiper-slide-shadow-left,
+.swiper-slide-shadow-right {
+  display: none;
 }

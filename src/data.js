@@ -3,6 +3,9 @@ import HealthRecord from './assets/health-record.png'
 import Language from './assets/language.png'
 import TestResults from './assets/test-results.png'
 
+// iPhone Mockups
+import Frame from './assets/mockups/iphone-frame.png'
+
 // Credits Logos
 import Abbvie from './assets/credits-logos/abbvie.png'
 import Amazon from './assets/credits-logos/amazon.png'
@@ -59,5 +62,28 @@ export const creditsLogos = [
   },
   {
     icon: Yale,
+  },
+];
+
+export const iphoneMockups = [
+  {
+    title: "Summarize Doctor's Notes",
+    img: Frame,
+  },
+  {
+    title: "Provide Translations",
+    img: Frame,
+  },
+  {
+    title: "Suggest Questions",
+    img: Frame,
+  },
+  {
+    title: "Understand Medication",
+    img: Frame,
+  },
+  {
+    title: "Some Other Title",
+    img: Frame,
   },
 ];
