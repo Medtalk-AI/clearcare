@@ -6,7 +6,7 @@ const Credits = () => {
     <section id='about' className='section bg-primary'>
       <div className="container mx-auto">
         <div className="flex flex-col">
-          <h2 className="section-title relative before:absolute before:opacity-40 before:-top-[2rem] before:-left-1/2 before:hidden before:lg:block text-black mt-[0px] lg:mt-0 mb-16 leading-snug text-center text-2xl lg:text-4xl">
+          <h2 className="section-title relative before:absolute before:opacity-40 before:-top-[2rem] before:-left-1/2 before:hidden before:lg:block text-black mt-[0px] lg:mt-0 mb-24 leading-snug text-center text-2xl lg:text-4xl">
             Built by students and alumni from
           </h2>
           <section className='grid lg:grid-cols-4 gap-y-12 lg:gap-x-8 lg:gap-y-8'>
