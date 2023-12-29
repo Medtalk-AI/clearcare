@@ -1,0 +1,45 @@
+{
+  "$schema": "https://app.flightcontrol.dev/schema.json",
+  "environments": [
+    {
+      "id": "production",
+      "name": "Production",
+      "region": "us-west-1",
+      "source": {
+        "branch": "main"
+      },
+      "services": [
+        {
+          "id": "my-webapp",
+          "name": "My Webapp",
+          "type": "fargate",
+          "buildType": "nixpacks",
+          "cpu": 0.5,
+          "memory": 1,
+          "minInstances": 1,
+          "maxInstances": 1,
+          "buildCommand": "npm run build",
+          "startCommand": "npm run start",
+          "envVariables": {
+            "DATABASE_URL": {
+              "fromService": {
+                "id": "db",
+                "value": "dbConnectionString"
+              }
+            }
+          }
+        },
+        {
+          "id": "db",
+          "name": "Database",
+          "type": "rds",
+          "engine": "postgres",
+          "engineVersion": "13",
+          "instanceSize": "db.t4g.micro",
+          "storage": 20,
+          "private": false
+        }
+      ]
+    }
+  ]
+}
