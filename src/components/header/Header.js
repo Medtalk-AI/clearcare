@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-scroll'
-import Nav from './Nav'
-import NavMobile from './NavMobile'
+import Nav from '../Nav'
+import NavMobile from '../NavMobile'
 // Import Logo
 
 const Header = () => {

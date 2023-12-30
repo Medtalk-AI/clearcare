@@ -11,7 +11,7 @@ import Abbvie from './assets/credits-logos/abbvie.png'
 import Amazon from './assets/credits-logos/amazon.png'
 import JPMorgan from './assets/credits-logos/jpmorgan.png'
 import NYU from './assets/credits-logos/nyu.png'
-import Tulane from './assets/credits-logos/tulane.png'
+import Stanford from './assets/credits-logos/stanford.png'
 import Yale from './assets/credits-logos/yale.png'
 
 export const navigation = [
@@ -58,7 +58,7 @@ export const creditsLogos = [
     icon: NYU,
   },
   {
-    icon: Tulane,
+    icon: Stanford,
   },
   {
     icon: Yale,
