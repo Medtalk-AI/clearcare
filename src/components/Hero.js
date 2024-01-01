@@ -1,4 +1,5 @@
 import React from 'react'
+import {HashLink} from 'react-router-hash-link'
 
 const Hero = () => {
   return (
@@ -10,9 +11,11 @@ const Hero = () => {
             <br />
             Less jargon, less stress.
           </h2>
-          <button className="btn btn-md bg-accent mt-8 lg:mt-16 hover:bg-accent-hover transition-all">
-            Request Access
-          </button>
+          <HashLink smooth to='/request-access'>
+            <button className="btn btn-md bg-accent mt-8 lg:mt-16 hover:bg-accent-hover transition-all">
+              Request Access
+            </button>
+          </HashLink>
           <p className="text-gray-700 mt-8 lg:mt-16 max-w-[800px]">
             ClearCare.AI is a one-stop solution to provide efficient communication and increased accessibility towards health conditions, lab results, imaging, doctor's notes and medical summaries.
           </p>

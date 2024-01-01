@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
+import {HashLink, NavHashLink} from 'react-router-hash-link'
 import {navigation} from '../data'
 import {XIcon, MenuAlt3Icon} from '@heroicons/react/outline'
 import {motion} from 'framer-motion'
-import {Link}  from 'react-scroll'
 
 const NavMobile = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -55,13 +55,15 @@ const NavMobile = () => {
         {navigation.map((item, index) => {
           return (
             <li key={index} className='mb-8'>
-              <Link to={item.href} smooth={true} duration={500} offset={-70} className="cursor-pointer text-white capitalize" onClick={() => setIsOpen(false)}>
-                {item.name}
-              </Link>
+              <NavHashLink smooth to={`/#${item.href}`} activeClassName='active' className='cursor-pointer text-white capitalize' onClick={() => setIsOpen(false)}>{item.name}</NavHashLink>
             </li>
           )
         })}
-        <button className='text-white border-2 border-white py-4 px-7 rounded-sm hover:bg-accent-hover transition-all'>Sign Up</button>
+        <HashLink smooth to='/request-access'>
+          <button className='text-white border-2 border-white py-4 px-7 rounded-sm hover:bg-accent-hover transition-all'>
+            Sign Up
+          </button>
+        </HashLink>
       </motion.ul>
     </nav >
   )

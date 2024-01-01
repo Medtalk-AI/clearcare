@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-scroll'
+import {HashLink, NavHashLink} from 'react-router-hash-link'
 import {navigation} from '../data'
 
 const Nav = () => {
@@ -9,14 +9,16 @@ const Nav = () => {
         {navigation.map((item, index) => {
           return (
             <li className="hover:text-accent cursor-pointer" key={index}>
-              <Link to={item.href} activeClass='active' spy={true} smooth={true} duration={500} offset={-70} className='transition-all duration-300'>{item.name}</Link>
+              <NavHashLink smooth to={`/#${item.href}`} activeClassName='active' className='transition-all duration-300'>{item.name}</NavHashLink>
             </li>
           )
         })}
         <li className="hover:text-accent cursor-pointer">
-          <button className="btn btn-md bg-accent hover:bg-accent-hover transition-all duration-300">
-            Sign Up
-          </button>
+          <HashLink smooth to='/request-access'>
+            <button className="btn btn-md bg-accent hover:bg-accent-hover transition-all duration-300">
+              Sign Up
+            </button>
+          </HashLink>
         </li>
       </ul>
     </nav>
