@@ -11,9 +11,9 @@ const Hero = () => {
             <br />
             Less jargon, less stress.
           </h2>
-          <HashLink smooth to='/request-access'>
+          <HashLink smooth to='/summary'>
             <button className="btn btn-md bg-accent mt-8 lg:mt-16 hover:bg-accent-hover transition-all">
-              Request Access
+              Try Our Demo
             </button>
           </HashLink>
           <p className="text-gray-700 mt-8 lg:mt-16 max-w-[800px]">

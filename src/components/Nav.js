@@ -9,7 +9,7 @@ const Nav = () => {
         {navigation.map((item, index) => {
           return (
             <li className="hover:text-accent cursor-pointer" key={index}>
-              <NavHashLink smooth to={`/#${item.href}`} activeClassName='active' className='transition-all duration-300'>{item.name}</NavHashLink>
+              <NavHashLink smooth to={`/#${item.href}`} className='transition-all duration-300'>{item.name}</NavHashLink>
             </li>
           )
         })}
