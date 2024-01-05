@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-body text-paragraph leading-6 bg-gray-200;
+    @apply font-body text-paragraph leading-6 bg-secondary;
   }
   h1,
   h2,
@@ -36,7 +36,7 @@
     @apply bg-secondary text-paragraph h-[60px] pl-6 w-full font-body text-[15px] rounded-sm border-solid border-2 border-accent;
   }
   .textarea {
-    @apply bg-secondary resize-none w-full outline-none p-6 rounded-sm h-[500px] bg-primary;
+    @apply bg-secondary resize-none w-full outline-none p-6 rounded-sm h-[300px] bg-primary;
   }
   .active {
     @apply text-accent;

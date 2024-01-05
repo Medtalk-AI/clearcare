@@ -87,3 +87,12 @@ export const iphoneMockups = [
     img: Frame,
   },
 ];
+
+export const languages = [
+  {
+    title: "English"
+  },
+  {
+    title: "Chinese"
+  },
+];
