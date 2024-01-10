@@ -5,14 +5,22 @@ const Summary = () => {
   const [input, setInput] = useState('')
   const [alert, setAlert] = useState(false)
   const [alertMsg, setAlertMsg] = useState('')
+  const [response, setResponse] = useState('')
 
   const createSummary = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post('http://localhost:5500/api/user', {
-        input: input
-      })
-      console.log(`Data: ${res}`)
+      await axios.post('http://localhost:5500/summarize', {prompt})
+        .then((res) => {
+          setResponse(res.data)
+          console.log(response)
+        })
+        .catch((err) => {
+          console.log(err)
+          showAlert("Sorry, something went wrong. Please try again.")
+          setInput('')
+        })
+      console.log(input)
     } catch (err) {
       console.log(err)
       showAlert("Sorry, something went wrong. Please try again.")
