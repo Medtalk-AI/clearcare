@@ -57,15 +57,15 @@ const RequestAccess = () => {
     <section className='section'>
       <div className="container mx-auto lg:mt-24">
         <div className='flex flex-col items-center text-center'>
-          <h2 className="section-title relative before:absolute before:opacity-40 before:-top-[2rem] before:-left-1/2 before:hidden before:lg:block mt-[50px] lg:mt-[0px] leading-snug text-black">
+          <h2 className="section-title relative before:absolute before:opacity-40 before:-top-[2rem] before:-left-1/2 before:hidden before:lg:block mt-[50px] lg:mt-[0px] leading-snug text-header">
             ClearCare.AI is coming soon.
           </h2>
-          <p className="text-gray-700 mt-8 lg:mt-4 max-w-[800px]">
+          <p className="text-paragraph mt-8 lg:mt-4 max-w-[800px] leading-relaxed">
             Sign up to turn your medical reports into accessible, interactive and jargon-less summaries.
           </p>
-          <form action="" className="space-y-8 w-full max-w-[780px] flex flex-col items-center text-center mt-16" onSubmit={(e) => addUser(e)}>
+          <form action="" className="space-y-8 w-full max-w-[780px] flex flex-col items-center text-center mt-16 text-paragraph" onSubmit={(e) => addUser(e)}>
             {alert &&
-              <div className="rounded-sm bg-green-200 text-green-700 p-4 w-full" role="alert">
+              <div className="rounded-sm bg-alert text-white p-4 w-full" role="alert">
                 <p>{alertMsg}</p>
               </div>
             }

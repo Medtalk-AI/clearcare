@@ -34,7 +34,7 @@ const NavMobile = () => {
   return (
     <nav className='relative'>
       <div onClick={() => setIsOpen(true)} className="cursor-pointer text-black">
-        <MenuAlt3Icon className='w-8 h-8' />
+        <MenuAlt3Icon style={{color: '#1f1a50'}} className='w-8 h-8' />
       </div>
       <motion.div
         variants={circleVariants}

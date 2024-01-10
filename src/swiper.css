@@ -11,11 +11,11 @@
 }
 
 .swiper-slide h2 {
-  color: white;
+  color: #eae9ee;
 }
 
 .swiper-slide-active h2 {
-  color: black;
+  color: #1f1a50;
   transition: 300ms;
 }
 

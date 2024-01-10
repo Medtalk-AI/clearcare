@@ -31,7 +31,7 @@ const Summary = () => {
   return (
     <section className='section'>
       <form action='' className="container mx-auto lg:mt-24" onSubmit={(e) => createSummary(e)}>
-      {alert && <div className="rounded-sm bg-green-200 text-green-700 text-center p-4 w-full mt-[50px]" role="alert">
+      {alert && <div className="rounded-sm bg-alert text-white text-center p-4 w-full mt-[50px]" role="alert">
         <p>{alertMsg}</p>
       </div>}
         <div className='flex flex-col lg:flex-row mt-[50px]'>
@@ -41,9 +41,10 @@ const Summary = () => {
               onChange={(e) => setInput(e.target.value)}
               value={input} 
               placeholder='Enter your medical note'
+              leading-relaxed
             ></textarea>
           </div>
-          <div className='flex-1 mt-4 lg:mt-0 bg-secondary border-solid border-2 border-primary p-6'>
+          <div className='flex-1 mt-4 lg:mt-0 bg-secondary border-solid border-2 border-primary p-6 text-paragraph leading-relaxed'>
             Your summary
           </div>
         </div>

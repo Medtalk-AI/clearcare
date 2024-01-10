@@ -4,8 +4,8 @@ module.exports = withMT({
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      primary: 'Work Sans',
-      body: 'Work Sans',
+      primary: 'Poppins',
+      body: 'Poppins',
     },
     container: {
       padding: {
@@ -21,13 +21,15 @@ module.exports = withMT({
     },
     extend: {
       colors: {
-        primary: '#ffffff',
-        secondary: '#f3f4f6',
+        primary: '#eae9ee',
+        secondary: '#d5d4dc',
         accent: {
           DEFAULT: '#3d5af1',
           hover: '#1134ea',
         },
-        paragraph: '#000000',
+        header: '#1f1a50',
+        paragraph: '#565574',
+        alert: '#a1acea',
       },
     },
   },

@@ -13,7 +13,7 @@ const AboutInfographic = () => {
                   <div className='mb-8 text-center w-full'>
                     <div className='flex flex-col justify-center items-center py-6'>
                       <img src={item.icon} className='w-[100px] h-[100px] mt-6' alt="" />
-                      <p className="text-gray-700 mt-8 lg:mt-16 max-w-[400px]">
+                      <p className="text-paragraph mt-8 lg:mt-16 max-w-[400px] mx-2 leading-relaxed">
                         {item.description}
                       </p>
                     </div>
