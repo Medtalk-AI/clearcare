@@ -3,27 +3,28 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv').config()
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const {Configuration, OpenAIApi} = require('openai')
+const { Configuration, OpenAIApi } = require('openai')
 
 const config = new Configuration({
-  apiKey: "???",
+  apiKey: process.env.API_KEY,
 })
 
 const openai = new OpenAIApi(config)
 
 const app = express()
-app.use(express.json())
-app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 5500
 const path = require('path')
+
+app.use(express.json())
+app.use(bodyParser.json())
 app.use(cors())
 
 const _dirname = path.dirname("")
 const buildPath = path.join(_dirname, "../build")
 
 app.use(express.static(buildPath))
-app.get("/*", function(req, res) {
+app.get("/*", function (req, res) {
   res.sendFile(
     path.join(__dirname, "../build/index.html"),
     function (err) {
@@ -35,13 +36,14 @@ app.get("/*", function(req, res) {
 })
 
 app.post("/summarize", async (req, res) => {
-  const {prompt} = req.body
+  const prompt = req.body.input
   const completion = await openai.createCompletion({
     model: "gpt-3.5-turbo-instruct",
     max_tokens: 512,
-    temperature: 0,
-    prompt: prompt,
+    temperature: 0.5,
+    prompt: "You are a medical assistant. Please summarize the following in thoroughly and as concisely as possible, with simple vocabulary: " + prompt + ".",
   })
+  console.log(completion.data.choices[0].text)
   res.send(completion.data.choices[0].text)
 })
 
