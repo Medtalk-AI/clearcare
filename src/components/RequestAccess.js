@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
 const RequestAccess = () => {
@@ -37,7 +37,7 @@ const RequestAccess = () => {
       showAlert("Thanks for signing up. We'll be in touch soon!")
     } catch (err) {
       console.log(err)
-      showAlert("Sorry, something went wrong. Please try again.")
+      showAlert(err)
     } finally {
       setFirst('')
       setLast('')
@@ -50,7 +50,7 @@ const RequestAccess = () => {
     setAlert(true)
     setTimeout(() => {
       setAlert(false)
-    }, 3000)
+    }, 10000)
   }
 
   return (
@@ -69,29 +69,29 @@ const RequestAccess = () => {
                 <p>{alertMsg}</p>
               </div>
             }
-            <input 
-              type="text" 
-              className='input' 
-              placeholder='Your First Name' 
+            <input
+              type="text"
+              className='input'
+              placeholder='Your First Name'
               required
               onChange={(e) => setFirst(e.target.value)}
               value={first}
             />
-            <input 
-              type="text" 
-              className='input' 
-              placeholder='Your Last Name' 
+            <input
+              type="text"
+              className='input'
+              placeholder='Your Last Name'
               required
               onChange={(e) => setLast(e.target.value)}
               value={last}
             />
-            <input 
-              type="email" 
-              className='input' 
-              placeholder='Your E-Mail' 
+            <input
+              type="email"
+              className='input'
+              placeholder='Your E-Mail'
               required
               onChange={(e) => setEmail(e.target.value)}
-              value={email} 
+              value={email}
             />
             <button className="btn btn-md bg-accent hover:bg-accent-hover transition-all duration-300">
               Request Access

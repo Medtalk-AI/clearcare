@@ -23,7 +23,7 @@ const Summary = () => {
         })
     } catch (err) {
       console.log(err)
-      showAlert("Sorry, something went wrong. Please try again.")
+      showAlert(err)
       setInput('')
       setResponse('')
     }
@@ -34,7 +34,7 @@ const Summary = () => {
     setAlert(true)
     setTimeout(() => {
       setAlert(false)
-    }, 3000)
+    }, 10000)
   }
 
   return (
