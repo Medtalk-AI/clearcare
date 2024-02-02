@@ -37,7 +37,7 @@ const RequestAccess = () => {
       showAlert("Thanks for signing up. We'll be in touch soon!")
     } catch (err) {
       console.log(err)
-      showAlert(err)
+      showAlert("Sorry, something went wrong. Please try again.")
     } finally {
       setFirst('')
       setLast('')
@@ -50,7 +50,7 @@ const RequestAccess = () => {
     setAlert(true)
     setTimeout(() => {
       setAlert(false)
-    }, 10000)
+    }, 3000)
   }
 
   return (

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { XIcon } from '@heroicons/react/outline'
 import axios from 'axios'
 
 const Summary = () => {
@@ -14,6 +15,7 @@ const Summary = () => {
       await axios.post('http://localhost:5500/summarize', { input })
         .then((res) => {
           setResponse(res.data)
+          showAlert("Your note has been summarized.")
         })
         .catch((err) => {
           console.log(err)
@@ -23,7 +25,7 @@ const Summary = () => {
         })
     } catch (err) {
       console.log(err)
-      showAlert(err)
+      showAlert("Sorry, something went wrong. Please try again.")
       setInput('')
       setResponse('')
     }
@@ -34,7 +36,17 @@ const Summary = () => {
     setAlert(true)
     setTimeout(() => {
       setAlert(false)
-    }, 10000)
+    }, 3000)
+  }
+
+  const handleClickX = () => {
+    setInput('')
+    setResponse('')
+  }
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(response)
+    showAlert('Your summary has been copied.')
   }
 
   return (
@@ -44,7 +56,7 @@ const Summary = () => {
           <p>{alertMsg}</p>
         </div>}
         <div className='flex flex-col lg:flex-row mt-[50px]'>
-          <div className="flex-1 flex flex-col lg:mr-6">
+          <div className="flex-1 flex lg:mr-6 bg-primary">
             <textarea
               className="textarea"
               onChange={(e) => setInput(e.target.value)}
@@ -52,13 +64,18 @@ const Summary = () => {
               placeholder='Enter your medical note'
               leading-relaxed
             ></textarea>
+            {input &&
+              <div onClick={() => handleClickX()} className="cursor-pointer m-6">
+                <XIcon className='w-8 h-8 text-accent hover:text-accent-hover' />
+              </div>
+            }
           </div>
           <div className='flex-1 mt-4 lg:mt-0 bg-secondary border-solid border-2 border-primary p-6 text-paragraph leading-relaxed'>
             {response === '' ? 'Your summary' : response}
           </div>
         </div>
         <div className='flex justify-end'>
-          <button className="btn btn-md text-accent bg-secondary border-solid border-accent border-2 hover:text-accent-hover hover:border-accent-hover hover:bg-secondary mt-8 transition-all duration-300 mr-6">
+          <button type='button' onClick={() => handleCopy()} className="btn btn-md text-paragraph bg-secondary border-solid border-paragraph border-2 hover:bg-secondary mt-8 transition-all duration-300 mr-6">
             Copy
           </button>
           <button className="btn btn-md bg-accent hover:bg-accent-hover mt-8 transition-all duration-300">
