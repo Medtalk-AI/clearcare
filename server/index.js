@@ -36,12 +36,13 @@ app.get("/*", function (req, res) {
 })
 
 app.post("/summarize", async (req, res) => {
-  const prompt = req.body.input
+  const input = req.body.input
+  const language = req.body.language
   const completion = await openai.createCompletion({
     model: "gpt-3.5-turbo-instruct",
     max_tokens: 512,
     temperature: 0.5,
-    prompt: "You are a medical assistant. Please summarize the following in thoroughly and as concisely as possible, with simple vocabulary: " + prompt + ".",
+    prompt: "You are a medical assistant. Please summarize the following as thoroughly and as concisely as possible, with simple vocabulary, and translate it into " + language + ": " + input + ".",
   })
   console.log(completion.data.choices[0].text)
   res.send(completion.data.choices[0].text)
