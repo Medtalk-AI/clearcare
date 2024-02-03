@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { XIcon } from '@heroicons/react/outline'
-import { Dropdown, DropdownItem } from 'flowbite-react'
+import { Dropdown } from 'flowbite-react'
+import { ReactTyped } from 'react-typed'
 import axios from 'axios'
 
 const Summary = () => {
@@ -62,7 +63,7 @@ const Summary = () => {
           <p>{alertMsg}</p>
         </div>}
         <div className='flex justify-end mt-[50px]'>
-          <Dropdown label={language} dismissOnClick={true}>
+          <Dropdown style={{ border: 'solid #565574 2px', borderRadius: '0.125rem', color: '#565574' }} label={language} dismissOnClick={true}>
             <button className='flex items-center justify-start px-4 py-2 text-sm text-paragraph cursor-pointer w-full' value='English' onClick={(e) => handleLanguage(e.target.value)}>English</button>
             <button className='flex items-center justify-start px-4 py-2 text-sm text-paragraph cursor-pointer w-full' value='Mandarin' onClick={(e) => handleLanguage(e.target.value)}>Mandarin</button>
             <button className='flex items-center justify-start px-4 py-2 text-sm text-paragraph cursor-pointer w-full' value='Spanish' onClick={(e) => handleLanguage(e.target.value)}>Spanish</button>
@@ -84,7 +85,7 @@ const Summary = () => {
             }
           </div>
           <div className='flex-1 mt-4 lg:mt-0 bg-secondary border-solid border-2 border-primary p-6 text-paragraph leading-relaxed'>
-            {response === '' ? 'Your summary' : response}
+            {response === '' ? 'Your summary' : <ReactTyped strings={[response]} typeSpeed={15} />}
           </div>
         </div>
         <div className='flex justify-end'>
